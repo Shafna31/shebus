@@ -7,24 +7,29 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 
 # Create your views here.
-def ticket_book(request,*args):
-    '''context = {}
-    slot = request.POST['slot']
-    date = request.POST['date']
-    women_id = request.POST['women']
-    women = User.objects.get(pk=women_id)
+'''def ticket_book(request,*args):
+    if request.method == 'POST':
+        context = {}
+        women = request.POST['women']
+        slot = request.POST['slot']
+        date = request.POST['date']
+        women_id = User.objects.get(pk=women)
     
     try:
         ticket = Ticket.objects.create(
-            women=women,
-            date = date,
-            slot = slot,
-            status=False,
+        women=women_id,
+        date = date,
+        slot = slot,
+        status=False,
         )
     except IntegrityError:
-        messages.add_message(request, messages.ERROR, f'Already booked ticket on {date}!')'''
-    return redirect('index.html')
+        messages.add_message(request, messages.ERROR, f'Already booked ticket on {date}!')
+        return redirect('accounts:index')
+        
+    context = {'ticket':ticket}
+    messages.add_message(request, messages.INFO, f'Booking Successful!')
+    return redirect("accounts:home")'''
+    
 
-def cancel(request):
-    return HttpResponse('cancel')
+
 

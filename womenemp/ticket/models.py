@@ -1,7 +1,7 @@
-'''from django.db import models
+from django.db import models
 from accounts.models import User
 # Create your models here.
-class Ticket(models.Model):
+'''class Ticket(models.Model):
     TIME_SLOT = [
     (1, '9:00'),
     (2, '11:00'),
@@ -12,9 +12,8 @@ class Ticket(models.Model):
     (7, '9:00'),
     ]
     women = models.ForeignKey(User,on_delete=models.CASCADE,limit_choices_to={'user_type': 'W'}, related_name='Women')
-    catering = models.ForeignKey(User,on_delete=models.CASCADE, limit_choices_to={'user_type': 'C'})
     date =  models.DateField()
-    time = models.TimeField(null=True)
+    slot = models.TimeField(max_length=1,choices=TIME_SLOT)
     status = models.BooleanField(default=False)
 
     class Meta:
@@ -22,7 +21,7 @@ class Ticket(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['women','date'], name='unique_booking')
         ]
-        ordering = ['date', 'time']
+        
 
     def __str__(self):
         return f"{self.women.get_full_name()}'sbooking on {self.women.time} on {self.date}"'''

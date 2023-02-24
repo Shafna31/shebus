@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="buses.css">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+hr{
+    color: #fff;
+}
+
+.menu-btn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+.navbar{
+    position:absolute; 
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:20px;
+    color: whitesmoke;
+}
+.header{
+    
+    padding-left: 35px;
+    display: flex;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+}
+.logo
+{
+    padding-top: 10px;
+} 
+.logo p{
+ font-size: 25px;
+ border: 1px dashed purple ;
+ padding: 3px;
+ font-family: Bookman, URW Bookman L, serif;
+font-weight: bold;
+}
+#purple{
+background: purple;
+color: white;
+font-weight: bold;
+}
+.logo p .unique
+{
+    color: purple;
+    font-weight: bold;
+}
+.links ul{
+display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: purple;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* text-transform: uppercase; */
+}
+ul li a:hover{
+color: purple;
+}
+.links ul li{
+    list-style: none;
+    margin: 15px;
+    transition: .3s;
+}
+.links ul li:hover{
+color: purple;
+transform: translateY(-3px);
+}
+.bg{
+    width: 100%;
+    height: 300px;
+    background-image: url("purple.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.main{
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+
+}
+.main h3{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(253, 253, 253);
+}
+.main p{
+    font-size: 20px;
+    color: rgb(255,255,255);
+    font-style: italic;
+}
+.main .btn,.about .btn,#save,.enqbtn1,.courses,.enqbtn,.btn{
+    color: #fff;
+    font-weight:bold ;
+    border: 1px solid purple;
+    border-radius: 10px;
+    background: purple;
+    width: 150px;
+    height: 35px;
+    box-shadow: 5px 5px 10px purple;
+   transition: .3s;
+}
+.main .btn:hover,#save:hover,.enqbtn1:hover,.enqbtn:hover,.about .btn:hover,.courses .btn:hover,.btn:hover{
+  transform: translateX(3px);
+  color: purple;
+  background-color: #fff;
+}
+
+
+/* enquiry */
+.enquiry,.enquiry1{
+    margin: 15px;
+    border: 2px purple solid;
+    border-radius: 5px;
+}
+.seats,.seats1{
+    text-align: center;
+    margin: 25px;
+    display: none;
+}
+
+/* enquiry ends */
+
+.seat {
+    display: flex;
+    text-align: center;
+    padding: 20px 10px;
+    height:4px;
+    align-items: center;
+    border-radius: 10px;
+    background: #f1f1f1;
+  }
+  .taken { background: #df0000; color: #fff; }
+  .selected { background: #87ff96; }
+  .fed{
+    background: pink;
+  }
+   
+  /* (B) SEATS LAYOUT */
+  #layout {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+  }
+   
+  /* (C) LEGEND */
+  #legend {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 50px auto ;
+  }
+  #legend .txt {
+    display: flex;
+    align-items: center;
+  }
+   
+  /* (D) SAVE */
+  /* #save {
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 0;
+    color: #fff;
+    background: #00479f;
+  } */
+
+
+
+
+
+
+.contact{
+    padding-top: 30px;
+    text-align: center;
+    background-color: rgb(83, 78, 78);
+    margin-top: 50px;
+
+}
+.contact h3 a{
+    color: #fff;
+    font-size: 30px;
+}
+.cont{
+    margin: 20px;
+    border: 1px #fff dashed;
+    padding: 10px;
+    box-shadow:
+        0 2.8px 2.2px rgba(187, 176, 176, 0.034),
+        0 6.7px 5.3px rgba(230, 227, 227, 0.048),
+        0 12.5px 10px rgba(241, 239, 239, 0.06),
+        0 22.3px 17.9px rgba(224, 217, 217, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(253, 251, 251, 0.12);
+    transition: ease-in .3s;
+}
+.cont:hover{
+    transform: rotateX('30deg');
+    box-shadow: 0 3px 10px purple;
+}
+
+.contacts h4{
+color: #fff;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.contacts h5{
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.fa{
+    color: purple;
+}
+.head{
+    background-color: purple;
+}
+.head1{
+    color: #fff;
+}
+.icons i{
+    color: #fff;
+}
+ h6{
+    color: purple;
+}
+/* ....................about us......................... */
+
+
+.main-abt{
+    margin-top: 100px;
+    text-align: center;
+}
+.main-abt h3{
+    font-size: 40px;
+}
+.choose-cont .fa{
+    color: #fff;
+    transition: .5s ease-in;
+}
+.choose-cont:hover{
+    transform: translateY(-10px);
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px, rgba(250, 250, 250, 0.3) 0px 30px 60px -30px;}
+.choose .one,.choose .three{
+    transform: translateY(40px);
+    
+}
+.line
+{
+    background-color: #000;
+    width: 3px;
+    height: 100px;
+}
+#flip{
+    padding: 10px;
+    border-radius: 10px;
+    background-color:purple;
+    text-align: center;
+    color: #fff;
+    
+}
+.panel{
+    text-align: center;
+    border-radius: 10px;
+    padding:30px;
+    display: none;
+    background-color: darkgrey;
+}
+.panel h4{
+    color: #fff;
+    
+}
+.panel p{
+    font-size: 18px;
+}
+.course-content{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.course-img{
+    border-radius: 25px;
+    width: 95%;
+    height: 400px;
+    transition: .3s;
+}
+.course-img:hover{
+    box-shadow: 0 5px 30px rgb(255, 0, 140);
+    transform: translateX(5px);
+}
+.more,.web-more,.back-more,.graph-more,.data-more,.devops-more{
+    color: rgb(52, 42, 199);
+}
+#cut{
+text-decoration: line-through;
+color: green;
+}
+#red{
+    color: red;
+}
+.heading p{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+/* --------------contact Us------------------- */
+.contact-us{
+background-color: rgb(59, 53, 53);
+
+}
+.cont-img{
+   width: 100%;
+   height: 600px;
+   background:linear-gradient(rgba(194, 24, 171, 0.3),rgba(156, 11, 144, 0.3));
+ }
+.form h2{
+    margin-top: 25px;
+text-align: center;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: rgb(255, 0, 140);
+}
+#contactForm{
+    padding: 50px;
+}
+
+.form-label{
+    color: #fff;
+}
+@media only screen and (max-width:850px){
+    .menu-btn{
+        display: block;
+    }
+    .navbar{
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+    .nav-links{
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background: #484872;
+        margin-top: -900px;
+        transition: all 0.5s ease;
+    }
+    .mobile-menu{
+        margin-top: 0px;
+        border-bottom-right-radius: 30%;
+    }
+    .nav-links li{
+        margin: 30px auto;
+    }}
+
+    </style>
+</head>
+<body>
+     <div class="main-body">
+        <div class="bg">
+          <!-- main page -->
+          <!-- header -->
+        <div class="header">
+            <div class="logo">
+                <p><i class="fa fa-bus fa-1x" aria-hidden="true"></i> <span id="purple">She</span><span class="unique">Move</span></p>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Logout</a></li>
+                    </ul>
+            </div>
+        </div>
+        <!-- header ends -->
+        <!-- writings -->
+        <div class="main">
+          <h3>Travel is never the matter of fear But of <span class="unique">"Courage"</span></h3>
+           <p>“Make your first step towards your safer journey”</p>
+           
+           
+        </div>
+        </div>
+   
+
+<!-- Available trains -->
+<div class="enquiry">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Butterfly</h4>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">From:kochi</li>
+        <li class="list-group-item">To: Thiruvanthapuram</li>
+        <li class="list-group-item">Start Time: 4:00 PM</li>
+        <li class="list-group-item">End Time: 3:00 AM</li>
+        <li class="list-group-item">Cost of Travel: $50</li>
+      </ul>
+      <div class="card-body">
+        <a href="#bookseat" class="btn btn-primary enqbtn">View Seats</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!--available tarins end -->
+
+
+
+
+<section id="bookseat">
+    <div class="seats" id="st">
+        <!-- (A) SEAT LAYOUT -->
+  <div id="layout"></div>
+   
+  <!-- (B) LEGEND -->
+  <div id="legend">
+    <div class="seat "></div> <div class="txt">Available</div>
+    <div class="seat taken"></div> <div class="txt">Taken</div>
+    <div class="seat selected"></div> <div class="txt">Your Chosen Seats</div>
+    <div class="seat  fed"></div> <div class="txt">For Breast Fed mothers</div><hr>
+    <h5>***By clicking on the reserve button you will be redirected to payment portal directly.</h5>
+  </div>
+   
+  <!-- (C) SAVE SELECTION -->
+  <button id="save" onclick="reserve.save()">Reserve Seats</button>
+  </div>
+</section>
+
+
+<div class="enquiry1">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Two Star</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">From: Kochi</li>
+          <li class="list-group-item">To: Thiruvanthapuram</li>
+          <li class="list-group-item">Start Time: 10:00 AM</li>
+          <li class="list-group-item">End Time: 1:00 PM</li>
+          <li class="list-group-item">Cost of Travel: $50</li>
+        </ul>
+        <div class="card-body">
+          <a href="#bookseat1" class="btn btn-primary enqbtn1">View Seats</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!--available tarins end -->
+  
+  
+  
+  
+  <section id="bookseat1">
+      <div class="seats1" id="st">
+          <!-- (A) SEAT LAYOUT -->
+    <div id="layout"></div>
+     
+    <!-- (B) LEGEND -->
+    <div id="legend">
+      <div class="seat "></div> <div class="txt">Available</div>
+      <div class="seat taken"></div> <div class="txt">Taken</div>
+      <div class="seat selected"></div> <div class="txt">Your Chosen Seats</div>
+      <div class="seat  fed"></div> <div class="txt">For Breast Fed mothers</div>
+      <h5>***By clicking on the reserve button you will be redirected to payment portal directly.</h5>
+
+    </div>
+     
+    <!-- (C) SAVE SELECTION -->
+    <button id="save" onclick="reserve.save()">Reserve Seats</button>
+    </div>
+  </section>
+
+
+
+<!-- Conatct Us -->
+<div class="contact" id="contact">
+  <h3><a href="contactus.html"> <span id="">..... </span>Contact us <span id="us">.....</span></a></h3><br>
+<hr>
+<div class="container-fluid contacts">
+<div class="row ps-3 pe-3 pb-3">
+  
+  <div class="col-md-4 col-12 col2">
+    <div class="cont">
+    <i class="fa fa-phone fa-2x" aria-hidden="true"></i><h4>Make a ring at</h4>
+    <hr>
+     <h5>91-9847057789</h5>
+     <h5>91-9844352569</h5>
+    </div>
+    </div>
+    <div class="col-md-4 col-12 col2">
+      <div class="cont">
+      <i class="fa fa-envelope fa-2x" aria-hidden="true"></i><h4>Connect us through</h4>
+      <hr>
+       <h5>shemove@gmail.com</h5>
+       <h5>shemove12@gmail.com</h5>
+       </div>
+    </div>
+  <div class="col-md-4 col-12 col2">
+    <div class="cont">
+    <i class="fa fa-building fa-2x" aria-hidden="true"></i><h4>Locate us</h4>
+    <hr>
+     <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus</h5>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- Contact us ends -->
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-dark text-white">
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/"><span id="us">@</span>aGlance</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+       
+      
+<script>   
+
+    var reserve = {
+      // (A) INIT
+      init : () => {
+        // (A1) GET LAYOUT WRAPPER
+        let layout = document.getElementById("layout");
+     
+        // (A2) GENERATE SEATS
+        for (let i=65; i<=68; i++) { for (let j=1; j<=10; j++) {
+          let seat = document.createElement("div");
+          seat.innerHTML = String.fromCharCode(i) + j;
+          seat.className = "seat";
+          seat.onclick = () => { reserve.toggle(seat); };
+          layout.appendChild(seat);
+          if(j==10){
+            seat.style.background="pink"
+          }
+        }}
+     
+        // (A3) FOR DEMO ONLY - RANDOM TAKEN SEATS
+        let all = document.querySelectorAll("#layout .seat"),
+            len = all.length - 1, rnd = [];
+        while (rnd.length != 3) {
+          let r = Math.floor(Math.random() * len);
+          if (!rnd.includes(r)) { rnd.push(r); }
+        }
+        for (let i of rnd) {
+          all[i].classList.add("taken");
+          all[i].onclick = "";
+        }
+      },
+     
+      // (B) CHOOSE THIS SEAT
+      toggle : (seat) => {
+        seat.classList.toggle("selected");
+        
+      },
+     
+      // (C) SAVE RESERVATION
+      save : () => {
+        // (C1) GET SELECTED SEATS
+        let selected = document.querySelectorAll("#layout .selected");
+     
+        // (C2) ERROR!
+        if (selected.length == 0) { alert("No seats selected."); }
+     
+        // (C3) SELECTED SEATS
+        else {
+          // (C3-1) GET SELECTED SEAT NUMBERS
+          let seats = [];
+          for (let s of selected) { seats.push(s.innerHTML); }
+     
+          // (C3-2) DO SOMETHING WITH IT...
+          let data = new FormData();
+          data.append("seats", JSON.stringify(seats));
+          data.append("name", "JON DOE");
+          data.append("email", "JON@DOE.COM");
+          fetch("4-dummy.php", {
+            method: "POST",
+            body : data
+          })
+          .then(res => res.text())
+          .then((txt) => { console.log(txt); });
+        }
+      }
+    };
+    
+     
+    window.addEventListener("DOMContentLoaded", reserve.init);
+    $(document).ready(function(){
+        $(".enqbtn").click(function(){
+            $(".seats").slideToggle();
+         
+        });
+        $(".enqbtn1").click(function(){
+            $(".seats1").slideToggle();
+         
+        });
+    });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
