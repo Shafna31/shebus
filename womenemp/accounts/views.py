@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from .forms import SignUpForm
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
+    return render(request,'index.html')
 
 def user_login(request):
     if request.method == 'POST':
@@ -29,7 +29,7 @@ def reg(request):
             user = form.save()
             login(request,user)
             messages.add_message(request, messages.INFO, f'Welcome {user.get_full_name()}!!!Your account has been registered successfully.')
-            return render(request,'home2.html')
+            return render(request,'index.html')
     else:
         form = SignUpForm()
     return render(request,'reg.html',{'form':form})
