@@ -4,6 +4,7 @@ from django.db import connection, IntegrityError
 from django.contrib import messages
 from accounts.models import User
 from django.shortcuts import redirect
+from django.http import HttpResponse
 
 # Create your views here.
 def ticket_book(request,*args):
@@ -23,4 +24,7 @@ def ticket_book(request,*args):
     except IntegrityError:
         messages.add_message(request, messages.ERROR, f'Already booked ticket on {date}!')'''
     return redirect('index.html')
+
+def cancel(request):
+    return HttpResponse('cancel')
 
