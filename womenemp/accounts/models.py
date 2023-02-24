@@ -18,4 +18,9 @@ class User(AbstractUser):
         return self.username
 
  
-   
+class Caterer(models.Model):
+    community_name=models.CharField(max_length=255)
+    phoneno=models.CharField(max_length=10)
+    username=models.CharField(max_length=50)
+    password=models.CharField(max_length=50)
+    contract_period=models.IntegerField(max_length=2)
