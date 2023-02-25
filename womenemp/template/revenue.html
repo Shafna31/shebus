@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/revenue.css' %}">
+  </head>
+  <body class="body">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="admin.html" class="active">Dashboard</a>
+     
+      <a href="buses.html">Buses</a>
+      <a href="housewife.html">Housewives</a>
+      <a href="revenue.html ">Revenue</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+      
+      <!-- Navigation bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Admin Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid mt-3">
+        <!-- Main content -->
+        <h1>Welcome to the Admin Panel!</h1>
+    
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button">Action</button>
+              <button class="dropdown-item" type="button">Another action</button>
+              <button class="dropdown-item" type="button">Something else here</button>
+            </div>
+          </div>
+          <div style="display: inline-flex";>
+          <div class="card" style="width: 18rem; margin-top: 20px;border-radius: 10px;">
+            <div class="card-body">
+              <h3 class="card-title">Total Money Recieved</h3>
+              <h5 class="card-subtitle mb-2 text-muted" style="font-size: 35px;">35000</h5>
+              
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin-top: 20px;border-radius: 10px; margin-left: 30px;">
+            <div class="card-body">
+              <h3 class="card-title">Number of Registrations</h3>
+              <h5 class="card-subtitle mb-2 text-muted" style="font-size: 35px;">25</h5>
+              
+            </div>
+          </div>
+        </div>
+          <div class="card" style="width: 18rem; margin-top: 40px; height: 400px;">
+            
+            <div class="card-body">
+              <h3 class="card-title">Recieved From</h3>
+              <p class="card-text"style="font-size: 21px;">Food Margin: 10000<br>
+            Adds: 1500<br>Physical Adds: 3500<br>Sponsership:20000</p>
+          
+            </div>
+          </div>
+        <style>
+            .today{
+                margin-top: 100px;
+            }
+            .input{
+                margin: 10px;
+            }
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          padding: 20px;
+        }
+        
+        th, td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+          background-color: #f2f2f2;
+          color: #333;
+        }
+        </style>
+         </div>
+            </div>
+          </div> 
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

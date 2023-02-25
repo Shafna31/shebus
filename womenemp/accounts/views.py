@@ -40,3 +40,14 @@ def payment(request):
     return render(request,'payment.html')
 def userprofile(request):
     return render(request,'user.html')
+def admin(request):
+    return render(request,'admin.html')
+def bus(request):
+    return render(request,'buses.html')
+def house(request):
+    return render(request,'housewife.html')
+def revenue(request):
+    return render(request,'revenue.html')
+
+def user_login1(request):
+    return render(request,'login.html')
