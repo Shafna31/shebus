@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +93,7 @@ transform: translateY(-3px);
 .bg{
     width: 100%;
     height: 300px;
-    background-image: url("purple.jpg");
+    background-image: url("{% static 'img/purple.jpg' %}");
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -384,7 +385,7 @@ color: rgb(255, 0, 140);
         margin: 30px auto;
     }}
 
-    </style>
+</style>
 </head>
 <body>
      <div class="main-body">
@@ -454,8 +455,8 @@ color: rgb(255, 0, 140);
   </div>
    
   <!-- (C) SAVE SELECTION -->
-  <button id="save" onclick="reserve.save()">Reserve Seats</button>
-  </div>
+  <a href="{% url 'accounts:payment'%}"><button id="save" onclick="reserve.save()" >Reserve Seats</button>
+  </a> </div>
 </section>
 
 
@@ -492,14 +493,13 @@ color: rgb(255, 0, 140);
       <div class="seat "></div> <div class="txt">Available</div>
       <div class="seat taken"></div> <div class="txt">Taken</div>
       <div class="seat selected"></div> <div class="txt">Your Chosen Seats</div>
-      <div class="seat  fed"></div> <div class="txt">For Breast Fed mothers</div>
+      <div class="seat  fed"></div> <div class="txt">For Breast Fed mothers</div><hr>
       <h5>***By clicking on the reserve button you will be redirected to payment portal directly.</h5>
-
     </div>
      
     <!-- (C) SAVE SELECTION -->
-    <button id="save" onclick="reserve.save()">Reserve Seats</button>
-    </div>
+    <a href="{% url 'accounts:payment'%}"><button id="save" onclick="reserve.save()" >Reserve Seats</button>
+    </a> </div>
   </section>
 
 

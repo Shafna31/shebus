@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secured Paymentt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #d8ccd7, #bbc0a1);
+        
+            padding: 30px 10px;
+        }
+        .menu-btn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+.navbar{
+    position:absolute; 
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:20px;
+    color: whitesmoke;
+}
+.header{
+    
+    padding-left: 35px;
+    display: flex;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+}
+.logo
+{
+    padding-top: 10px;
+} 
+.logo p{
+ font-size: 25px;
+ border: 1px dashed purple ;
+ padding: 3px;
+ font-family: Bookman, URW Bookman L, serif;
+font-weight: bold;
+}
+#purple{
+background: purple;
+color: white;
+font-weight: bold;
+}
+.logo p .unique
+{
+    color: purple;
+    font-weight: bold;
+}
+.links ul{
+display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: purple;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* text-transform: uppercase; */
+}
+ul li a:hover{
+color: purple;
+}
+.links ul li{
+    list-style: none;
+    margin: 15px;
+    transition: .3s;
+}
+.links ul li:hover{
+color: purple;
+transform: translateY(-3px);
+}
+.fa{
+    color: purple;
+}
+        .card {
+            max-width: 500px;
+            margin: auto;
+            color: black;
+            border-radius: 20px;
+            border: 1px solid #0C4160;
+            padding: 20px 20px 20px 20px;
+            width: 150%;
+        }
+        
+        p {
+            margin: 0px;
+        }
+        
+        .container .h8 {
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+        }
+        
+        .btn.btn-primary {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            background-color: #a659bf;
+            border: none;
+            transition: 0.5s;
+            background-size: 200% auto;
+            text-shadow: #0C4160;
+            border-radius: 10px;
+            color: white;
+        
+        }
+        
+        
+        .btn.btn.btn-primary:hover {
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        
+        
+        .btn.btn-primary:hover .fas.fa-arrow-right {
+            transform: translate(15px);
+            transition: transform 0.2s ease-in;
+        }
+        
+        .form-control {
+            color: white;
+            background-color: #a659bf;
+            border: 2px solid transparent;
+            height: 60px;
+            padding-left: 20px;
+            vertical-align: middle;
+        }
+        
+        .form-control:focus {
+            color: white;
+            background-color: #0C4160;
+            border: 2px solid #2d4dda;
+            box-shadow: none;
+        }
+        
+        .text {
+            font-size: 14px;
+            font-weight: 600;
+           
+        }
+        
+        ::placeholder {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .row{
+           display: flex; 
+           justify-content: space-evenly;
+        }
+        .card{
+            margin: 50px;
+        }
+        .content{
+            padding: 30px;
+            font-size: larger;
+             font-weight: 100px;
+        }
+        .form-control{
+            height: 43px;
+        }
+        
+        .button{
+            background-color: #a659bf;
+             color:white; 
+             padding:10px;
+             border: 0;
+             border-radius: 10px;
+             width: 100%;
+            height: 70px;
+            font-size: 15px;
+        }</style>
+</head>
+<body>
+    <script>
+        function pop(){
+            alert("Payment procssing.. Dont press back !!!")
+        }
+    </script>
+    
+    
+        <section class="pay">
+       <div class="container p-0">
+        <div class="row">
+            <div class="col-md-4 card">
+                <div class="content">
+                <h4>Passenger Name: Fathima </h4><br>
+                <p>Booked Bus: Farhana Travels</p><br>
+                <p>Kochi to thiruvanthapuram</p><br>
+                <p>Date: 25/02/2023</p><br><br>
+                <input type="checkbox" name="lunchmeals" id="lunchmeals">
+                <label for="msg1">Do you wish to add lunch meal to the package?</label><br>
+                
+                <br>
+                <input type="checkbox" name="additionalrefresh" id="addrefresh">
+                <label for="msg2">Do you wish to add additional refreshments to the package?</label><br>
+               </div>
+                <div>
+                <button type="button" class="button">Save & Proceed</button>
+            </div>
+            </div>
+       
+
+            <div class="col-md-2"></div>
+        
+            <div class=" col-md-6 card">
+            <p class="h8 py-3">Payment Details</p>
+            
+                <div class="col-12" style="margin-top: 30px;">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">CardHolder Name</p>
+                        <input class="form-control mb-2" type="text">
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 30px;">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">Card Number</p>
+                        <input class="form-control mb-3" type="text" >
+                    </div>
+                </div>
+                <div class="col-6" style="margin-top: 30px;">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">Expiry</p>
+                        <input class="form-control mb-3" type="text" >
+                    </div>
+                </div>
+                <div class="col-6" style="margin-top: 30px;">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">CVV/CVC</p>
+                        <input class="form-control mb-3 pt-2 " type="password" >
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 30px;">
+                    <div class="btn btn-primary mb-3">
+                        <span class="ps-3" style="padding-left: 45%;" onclick="pop()">Pay </span>
+                        <span class="fas fa-arrow-right"></span>
+                    </div>
+                </div>
+           
+        </div>
+    </div>
+    </div>
+    </section>
+</body>
+</html>

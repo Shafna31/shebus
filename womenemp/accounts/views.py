@@ -15,7 +15,7 @@ def user_login(request):
         if user is not None:
             login(request,user)
             messages.success(request,'Login Successful')
-            return render(request,'home2.html')
+            return render(request,'index2.html')
         else:
             messages.error(request,'Invalid Credentials')
             return render(request,'log.html')
@@ -29,10 +29,12 @@ def reg(request):
             user = form.save()
             login(request,user)
             messages.add_message(request, messages.INFO, f'Welcome {user.get_full_name()}!!!Your account has been registered successfully.')
-            return render(request,'index.html')
+            return render(request,'index2.html')
     else:
         form = SignUpForm()
     return render(request,'reg.html',{'form':form})
 
 def ticket_book(request):
     return render(request,'ticketbook.html')
+def payment(request):
+    return render(request,'payment.html')
