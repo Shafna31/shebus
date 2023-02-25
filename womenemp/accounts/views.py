@@ -38,3 +38,5 @@ def ticket_book(request):
     return render(request,'ticketbook.html')
 def payment(request):
     return render(request,'payment.html')
+def userprofile(request):
+    return render(request,'user.html')
